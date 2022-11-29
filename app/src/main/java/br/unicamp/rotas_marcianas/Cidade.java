@@ -1,12 +1,20 @@
 package br.unicamp.rotas_marcianas;
 
-public class Cidade {
-    String codigo, nome;
-    double x, y;
+import com.google.gson.annotations.SerializedName;
 
-    public Cidade(String codigo, String nome, double x, double y)
+public class Cidade {
+
+    @SerializedName("nomeCidade")
+    String nome;
+
+    @SerializedName("coordenadaX")
+    double x;
+
+    @SerializedName("coordenadaY")
+    double y;
+
+    public Cidade(String nome, double x, double y)
     {
-        this.codigo = codigo;
         this.nome = nome;
         this.x = x;
         this.y = y;
@@ -16,10 +24,6 @@ public class Cidade {
     public Cidade()
     { }
 
-
-    public String getCodigo() { return this.codigo; }
-
-    public void setCodigo(String codigo) { this.codigo = codigo; }
 
     public String getNome() { return this.nome; }
 
@@ -42,6 +46,10 @@ public class Cidade {
     @Override
     public String toString()
     {
-        return this.nome;
+        return "Cidade{" +
+                "nome=" + nome + '\'' +
+                ", x=" + x +
+                ", y=" + y +
+                '}';
     }
 }

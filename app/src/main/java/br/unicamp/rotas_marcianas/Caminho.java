@@ -1,15 +1,15 @@
 package br.unicamp.rotas_marcianas;
 
-public class Caminhos {
+public class Caminho {
     String cidadeOrigem, cidadeDestino;
     int distancia, tempo, custo;
 
-    public Caminhos() {
+    public Caminho() {
         cidadeDestino = cidadeOrigem = "";
         distancia = tempo = custo = 0;
     }
 
-    public Caminhos(String idCidadeOrigem, String idCidadeDestino, int distancia, int tempo, int custo) {
+    public Caminho(String idCidadeOrigem, String idCidadeDestino, int distancia, int tempo, int custo) {
         this.cidadeOrigem = idCidadeOrigem;
         this.cidadeDestino = idCidadeDestino;
         this.distancia = distancia;
@@ -56,7 +56,7 @@ public class Caminhos {
         this.custo = custo;
     }
 
-    public int compareTo(Caminhos outro) { return cidadeDestino.toUpperCase().trim().compareTo(outro.cidadeDestino.toUpperCase().trim()); }
+    public int compareTo(Caminho outro) { return cidadeDestino.toUpperCase().trim().compareTo(outro.cidadeDestino.toUpperCase().trim()); }
 
     @Override
     public String toString() { return String.format("%s %s %d %d %d", cidadeOrigem, cidadeDestino, distancia, tempo, custo); }

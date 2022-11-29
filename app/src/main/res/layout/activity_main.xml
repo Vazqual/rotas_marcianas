@@ -31,31 +31,28 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spnDestino"
-        android:layout_width="95dp"
+        android:id="@+id/spnOrigem"
+        android:layout_width="145dp"
         android:layout_height="46dp"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="60dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spnOrigem"
-        android:layout_width="95dp"
+        android:id="@+id/spnDestino"
+        android:layout_width="145dp"
         android:layout_height="46dp"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
+        android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
         android:id="@+id/m"
-        android:layout_width="548dp"
-        android:layout_height="406dp"
+        android:layout_width="534dp"
+        android:layout_height="410dp"
         android:layout_marginEnd="4dp"
         android:src="@drawable/mapa"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">rotas-marcianas</string>
+    <string-array name="brew_array">
+        <item>Acheron</item>
+        <item>Arena</item>
+        <item>Arrakeen</item>
+        <item>Bakuysen</item>
+        <item>Bradbury</item>
+        <item>Burroughs</item>
+        <item>Cairo</item>
+        <item>Dumont</item>
+        <item>Echus Overlook</item>
+        <item>Esperanca</item>
+        <item>Gondor</item>
+        <item>Lakefront</item>
+        <item>Lowell</item>
+        <item>Moria</item>
+        <item>Nicosia</item>
+        <item>Odessa</item>
+        <item>Perseveranca</item>
+        <item>Rowan</item>
+        <item>Senzeni Na</item>
+        <item>Sheffield</item>
+        <item>Temperanca</item>
+        <item>Tharsis</item>
+        <item>Underhill</item>
+
+    </string-array>
+
 </resources>

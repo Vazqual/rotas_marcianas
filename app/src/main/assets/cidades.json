@@ -1,198 +1,117 @@
 [
   {
-    "cidadeDeOrigem": "Acheron",
-    "cidadeDeDestino": "Echus Overlook",
-    "distanciaCaminho": 2300,
-    "tempoCaminho": 19,
-    "custoCaminho": 100
+    "nomeCidade": "Acheron",
+    "coordenadaX": 0.11353,
+    "coordenadaY": 0.28857
   },
   {
-    "cidadeDeOrigem": "Arrakeen",
-    "cidadeDeDestino": "Gondor",
-    "distanciaCaminho": 3500,
-    "tempoCaminho": 17,
-    "custoCaminho": 100
+    "nomeCidade": "Arena",
+    "coordenadaX": 0.68726,
+    "coordenadaY": 0.29248
   },
   {
-    "cidadeDeOrigem": "Bradbury",
-    "cidadeDeDestino": "Odessa",
-    "distanciaCaminho": 4800,
-    "tempoCaminho": 27,
-    "custoCaminho": 160
+    "nomeCidade": "Arrakeen",
+    "coordenadaX": 0.05298,
+    "coordenadaY": 0.48682
   },
   {
-    "cidadeDeOrigem": "Bradbury",
-    "cidadeDeDestino": "Underhill",
-    "distanciaCaminho": 3000,
-    "tempoCaminho": 18,
-    "custoCaminho": 110
+    "nomeCidade": "Bakhuysen",
+    "coordenadaX": 0.67456,
+    "coordenadaY": 0.52002
   },
   {
-    "cidadeDeOrigem": "Burroughs",
-    "cidadeDeDestino": "Arena",
-    "distanciaCaminho": 1000,
-    "tempoCaminho": 8,
-    "custoCaminho": 60
+    "nomeCidade": "Bradbury",
+    "coordenadaX": 0.40747,
+    "coordenadaY": 0.74365
   },
   {
-    "cidadeDeOrigem": "Burroughs",
-    "cidadeDeDestino": "Lowell",
-    "distanciaCaminho": 3980,
-    "tempoCaminho": 20,
-    "custoCaminho": 120
+    "nomeCidade": "Burroughs",
+    "coordenadaX": 0.71265,
+    "coordenadaY": 0.37939
   },
   {
-    "cidadeDeOrigem": "Cairo",
-    "cidadeDeDestino": "Senzeni Na",
-    "distanciaCaminho": 2000,
-    "tempoCaminho": 13,
-    "custoCaminho": 80
+    "nomeCidade": "Cairo",
+    "coordenadaX": 0.21606,
+    "coordenadaY": 0.51025
   },
   {
-    "cidadeDeOrigem": "Cairo",
-    "cidadeDeDestino": "Underhill",
-    "distanciaCaminho": 4000,
-    "tempoCaminho": 20,
-    "custoCaminho": 120
+    "nomeCidade": "Dumont",
+    "coordenadaX": 0.55737,
+    "coordenadaY": 0.48096
   },
   {
-    "cidadeDeOrigem": "Dumont",
-    "cidadeDeDestino": "Burroughs",
-    "distanciaCaminho": 3800,
-    "tempoCaminho": 18,
-    "custoCaminho": 95
+    "nomeCidade": "Echus Overlook",
+    "coordenadaX": 0.24194,
+    "coordenadaY": 0.35498
   },
   {
-    "cidadeDeOrigem": "Echus Overlook",
-    "cidadeDeDestino": "Cairo",
-    "distanciaCaminho": 1900,
-    "tempoCaminho": 15,
-    "custoCaminho": 90
+    "nomeCidade": "Esperanca",
+    "coordenadaX": 0.78906,
+    "coordenadaY": 0.52588
   },
   {
-    "cidadeDeOrigem": "Echus Overlook",
-    "cidadeDeDestino": "Sheffield",
-    "distanciaCaminho": 1700,
-    "tempoCaminho": 13,
-    "custoCaminho": 80
+    "nomeCidade": "Gondor",
+    "coordenadaX": 0.93311,
+    "coordenadaY": 0.58545
   },
   {
-    "cidadeDeOrigem": "Gondor",
-    "cidadeDeDestino": "Lowell",
-    "distanciaCaminho": 2000,
-    "tempoCaminho": 16,
-    "custoCaminho": 80
+    "nomeCidade": "Lakefront",
+    "coordenadaX": 0.69336,
+    "coordenadaY": 0.63818
   },
   {
-    "cidadeDeOrigem": "Gondor",
-    "cidadeDeDestino": "Moria",
-    "distanciaCaminho": 1200,
-    "tempoCaminho": 10,
-    "custoCaminho": 60
+    "nomeCidade": "Lowell",
+    "coordenadaX": 0.89453,
+    "coordenadaY": 0.38428
   },
   {
-    "cidadeDeOrigem": "Nicosia",
-    "cidadeDeDestino": "Arrakeen",
-    "distanciaCaminho": 2200,
-    "tempoCaminho": 14,
-    "custoCaminho": 75
+    "nomeCidade": "Moria",
+    "coordenadaX": 0.90039,
+    "coordenadaY": 0.70947
   },
   {
-    "cidadeDeOrigem": "Odessa",
-    "cidadeDeDestino": "Bakhuysen",
-    "distanciaCaminho": 1400,
-    "tempoCaminho": 11,
-    "custoCaminho": 65
+    "nomeCidade": "Nicosia",
+    "coordenadaX": 0.16235,
+    "coordenadaY": 0.50732
   },
   {
-    "cidadeDeOrigem": "Odessa",
-    "cidadeDeDestino": "Esperanca",
-    "distanciaCaminho": 4030,
-    "tempoCaminho": 21,
-    "custoCaminho": 100
+    "nomeCidade": "Odessa",
+    "coordenadaX": 0.63306,
+    "coordenadaY": 0.67529
   },
   {
-    "cidadeDeOrigem": "Odessa",
-    "cidadeDeDestino": "Lakefront",
-    "distanciaCaminho": 1010,
-    "tempoCaminho": 7,
-    "custoCaminho": 50
+    "nomeCidade": "Perseveranca",
+    "coordenadaX": 0.66528,
+    "coordenadaY": 0.81787
   },
   {
-    "cidadeDeOrigem": "Odessa",
-    "cidadeDeDestino": "Perseveranca",
-    "distanciaCaminho": 1500,
-    "tempoCaminho": 12,
-    "custoCaminho": 75
+    "nomeCidade": "Rowan",
+    "coordenadaX": 0.56567,
+    "coordenadaY": 0.66553
   },
   {
-    "cidadeDeOrigem": "Odessa",
-    "cidadeDeDestino": "Temperanca",
-    "distanciaCaminho": 2350,
-    "tempoCaminho": 14,
-    "custoCaminho": 90
+    "nomeCidade": "Senzeni Na",
+    "coordenadaX": 0.18921,
+    "coordenadaY": 0.6626
   },
   {
-    "cidadeDeOrigem": "Rowan",
-    "cidadeDeDestino": "Lakefront",
-    "distanciaCaminho": 2100,
-    "tempoCaminho": 17,
-    "custoCaminho": 95
+    "nomeCidade": "Sheffield",
+    "coordenadaX": 0.15894,
+    "coordenadaY": 0.45849
   },
   {
-    "cidadeDeOrigem": "Rowan",
-    "cidadeDeDestino": "Odessa",
-    "distanciaCaminho": 1100,
-    "tempoCaminho": 9,
-    "custoCaminho": 60
+    "nomeCidade": "Temperanca",
+    "coordenadaX": 0.51343,
+    "coordenadaY": 0.67822
   },
   {
-    "cidadeDeOrigem": "Senzeni Na",
-    "cidadeDeDestino": "Gondor",
-    "distanciaCaminho": 5500,
-    "tempoCaminho": 30,
-    "custoCaminho": 200
+    "nomeCidade": "Tharsis",
+    "coordenadaX": 0.12964,
+    "coordenadaY": 0.39502
   },
   {
-    "cidadeDeOrigem": "Sheffield",
-    "cidadeDeDestino": "Cairo",
-    "distanciaCaminho": 1100,
-    "tempoCaminho": 10,
-    "custoCaminho": 70
-  },
-  {
-    "cidadeDeOrigem": "Sheffield",
-    "cidadeDeDestino": "Nicosia",
-    "distanciaCaminho": 300,
-    "tempoCaminho": 2,
-    "custoCaminho": 30
-  },
-  {
-    "cidadeDeOrigem": "Sheffield",
-    "cidadeDeDestino": "Tharsis",
-    "distanciaCaminho": 400,
-    "tempoCaminho": 5,
-    "custoCaminho": 100
-  },
-  {
-    "cidadeDeOrigem": "Temperanca",
-    "cidadeDeDestino": "Gondor",
-    "distanciaCaminho": 3900,
-    "tempoCaminho": 20,
-    "custoCaminho": 110
-  },
-  {
-    "cidadeDeOrigem": "Underhill",
-    "cidadeDeDestino": "Dumont",
-    "distanciaCaminho": 4050,
-    "tempoCaminho": 20,
-    "custoCaminho": 110
-  },
-  {
-    "cidadeDeOrigem": "Underhill",
-    "cidadeDeDestino": "Rowan",
-    "distanciaCaminho": 4140,
-    "tempoCaminho": 21,
-    "custoCaminho": 130
+    "nomeCidade": "Underhill",
+    "coordenadaX": 0.37891,
+    "coordenadaY": 0.51318
   }
 ]
