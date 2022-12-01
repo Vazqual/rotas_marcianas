@@ -30,27 +30,36 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Cidade[] cidades;
-
-
+        Caminho[][] caminhos;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String jsonFileString = (getJsonFromAssets(getApplicationContext(), "cidades.json"));
-        Log.i("data", jsonFileString);
-        Gson gson = new Gson();
-        Type listUserType = new TypeToken<List<Cidade>>() { }.getType();
+        String jfsCidades = (getJsonFromAssets(getApplicationContext(), "cidades.json"));
+        String jfsCaminhos = (getJsonFromAssets(getApplicationContext(), "caminhos.json"));
 
-        List<Cidade> listaCidades = gson.fromJson(jsonFileString, listUserType);
+        Log.i("data", jfsCidades);
+        Log.i("data", jfsCaminhos);
+        Gson gsonCidades = new Gson();
+        Gson gsonCaminhos = new Gson();
+        Type tipoListaCidades = new TypeToken<List<Cidade>>() { }.getType();
+        Type tipoListaCaminhos = new TypeToken<List<Caminho>>() {}.getType();
 
+
+        List<Cidade> listaCidades = gsonCidades.fromJson(jfsCidades, tipoListaCidades);
+        List<Caminho> listaCaminhos = gsonCaminhos.fromJson(jfsCaminhos, tipoListaCaminhos);
 
 
         cidades = new Cidade[listaCidades.size()];
+        caminhos = new Caminho[listaCidades.size()][listaCidades.size()];
         for (int i = 0; i< listaCidades.size(); i++)
         {
             cidades[i] = listaCidades.get(i);
             Log.i("item", cidades[i].toString());
         }
+        montarMatrizCaminhos(caminhos, cidades, listaCaminhos);
+
+
 
         String[] items = new String[listaCidades.size()];
 
@@ -117,12 +126,26 @@ public class MainActivity extends AppCompatActivity {
         desenharCidades(workingBitmap.getWidth(), workingBitmap.getHeight(), paint, canvas, cidades);
 
 
-
         ImageView imageView = findViewById(R.id.m);
         imageView.setAdjustViewBounds(true);
         imageView.setImageBitmap(mutableBitmap);
+
+
     }
 
+    private void montarMatrizCaminhos(Caminho[][] caminhos, Cidade[] cidades, List<Caminho> listCaminhos)
+    {
+        for (int i = 0; i < listCaminhos.size(); i++)
+            for (int j = 0; j< cidades.length; j++)
+                if (listCaminhos.get(i).cidadeOrigem.compareTo(cidades[j].nome)==0)
+                    for(int k = 0; k < cidades.length; k++)
+                        if (listCaminhos.get(i).cidadeDestino.compareTo(cidades[k].nome)==0)
+                        {
+                            caminhos[j][k] = listCaminhos.get(i);
+                            Log.i("item", "Cidade Origem "+ caminhos[j][k].cidadeOrigem
+                                                + " conectada com a Cidade Destino " + caminhos[j][k].cidadeDestino);
+                        }
+    }
     private void desenharCidades(int largura, int altura, Paint paint, Canvas canvas, Cidade[] cidade) {
         for (int i = 0; i < cidade.length; i++)
         {
@@ -137,7 +160,6 @@ public class MainActivity extends AppCompatActivity {
                     (float) Math.round(altura*cidade[i].y),
                     paint);
         }
-
     }
 
 

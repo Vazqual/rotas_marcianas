@@ -1,8 +1,22 @@
 package br.unicamp.rotas_marcianas;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Caminho {
-    String cidadeOrigem, cidadeDestino;
-    int distancia, tempo, custo;
+    @SerializedName("cidadeDeOrigem")
+    String cidadeOrigem;
+
+    @SerializedName("cidadeDeDestino")
+    String cidadeDestino;
+
+    @SerializedName("distanciaCaminho")
+    int distancia;
+
+    @SerializedName("tempoCaminho")
+    int tempo;
+
+    @SerializedName("custoCaminho")
+    int custo;
 
     public Caminho() {
         cidadeDestino = cidadeOrigem = "";
