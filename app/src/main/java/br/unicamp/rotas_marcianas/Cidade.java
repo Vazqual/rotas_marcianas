@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName;
 public class Cidade {
 
     @SerializedName("nomeCidade")
-    String nome;
+    private String nome;
 
     @SerializedName("coordenadaX")
-    double x;
+    private double x;
 
     @SerializedName("coordenadaY")
-    double y;
+    private double y;
 
     public Cidade(String nome, double x, double y)
     {

@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -29,42 +30,39 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Cidade[] cidades;
-        Caminho[][] caminhos;
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Cidade[] cidades;
+        Caminho[][] caminhos;
 
         String jfsCidades = (getJsonFromAssets(getApplicationContext(), "cidades.json"));
         String jfsCaminhos = (getJsonFromAssets(getApplicationContext(), "caminhos.json"));
 
         Log.i("data", jfsCidades);
         Log.i("data", jfsCaminhos);
+
         Gson gsonCidades = new Gson();
         Gson gsonCaminhos = new Gson();
+
         Type tipoListaCidades = new TypeToken<List<Cidade>>() { }.getType();
         Type tipoListaCaminhos = new TypeToken<List<Caminho>>() {}.getType();
-
 
         List<Cidade> listaCidades = gsonCidades.fromJson(jfsCidades, tipoListaCidades);
         List<Caminho> listaCaminhos = gsonCaminhos.fromJson(jfsCaminhos, tipoListaCaminhos);
 
-
         cidades = new Cidade[listaCidades.size()];
         caminhos = new Caminho[listaCidades.size()][listaCidades.size()];
-        for (int i = 0; i< listaCidades.size(); i++)
-        {
+
+        for (int i = 0; i< listaCidades.size(); i++) {
             cidades[i] = listaCidades.get(i);
             Log.i("item", cidades[i].toString());
         }
         montarMatrizCaminhos(caminhos, cidades, listaCaminhos);
 
-
-
         String[] items = new String[listaCidades.size()];
-
         for (int i = 0; i< listaCidades.size(); i++)
-            items[i] = cidades[i].nome;
+            items[i] = cidades[i].getNome();
 
         ArrayAdapter<String> adapterDdOrigem = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         ArrayAdapter<String> adapterDdDestino = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
@@ -72,8 +70,10 @@ public class MainActivity extends AppCompatActivity {
         Spinner ddOrigem = findViewById(R.id.spnOrigem);
         Spinner ddDestino = findViewById(R.id.spnDestino);
 
-        if (ddOrigem != null && ddDestino != null)
-        {
+        Button btnBuscar = findViewById(R.id.btnBuscar);
+
+
+        if (ddOrigem != null && ddDestino != null) {
             ddOrigem.setAdapter(adapterDdOrigem);
             ddDestino.setAdapter(adapterDdDestino);
 
@@ -124,42 +124,65 @@ public class MainActivity extends AppCompatActivity {
         Canvas canvas = new Canvas(mutableBitmap);
 
         desenharCidades(workingBitmap.getWidth(), workingBitmap.getHeight(), paint, canvas, cidades);
-
+        desenharCaminhos(workingBitmap.getWidth(), workingBitmap.getHeight(), paint, canvas, caminhos, cidades);
 
         ImageView imageView = findViewById(R.id.m);
         imageView.setAdjustViewBounds(true);
         imageView.setImageBitmap(mutableBitmap);
 
+        btnBuscar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
 
+            }
+        });
+
+        montarMatrizCaminhos(caminhos, cidades, listaCaminhos);
+        Grafo grafo = new Grafo(null, caminhos);
     }
+
 
     private void montarMatrizCaminhos(Caminho[][] caminhos, Cidade[] cidades, List<Caminho> listCaminhos)
     {
         for (int i = 0; i < listCaminhos.size(); i++)
             for (int j = 0; j< cidades.length; j++)
-                if (listCaminhos.get(i).cidadeOrigem.compareTo(cidades[j].nome)==0)
+                if (listCaminhos.get(i).cidadeOrigem.compareTo(cidades[j].getNome())==0)
                     for(int k = 0; k < cidades.length; k++)
-                        if (listCaminhos.get(i).cidadeDestino.compareTo(cidades[k].nome)==0)
+                        if (listCaminhos.get(i).cidadeDestino.compareTo(cidades[k].getNome())==0)
                         {
                             caminhos[j][k] = listCaminhos.get(i);
                             Log.i("item", "Cidade Origem "+ caminhos[j][k].cidadeOrigem
                                                 + " conectada com a Cidade Destino " + caminhos[j][k].cidadeDestino);
                         }
     }
+
+
     private void desenharCidades(int largura, int altura, Paint paint, Canvas canvas, Cidade[] cidade) {
         for (int i = 0; i < cidade.length; i++)
         {
             canvas.drawCircle(          //Desenha os pontos nas coordenadas
-                    (float) Math.round(largura*cidade[i].x),    //das cidades
-                    (float) Math.round(altura*cidade[i].y),
+                    (float) Math.round(largura*cidade[i].getX()),    //das cidades
+                    (float) Math.round(altura*cidade[i].getY()),
                     10f,
                     paint);
             canvas.drawText(            //Escreve os nomes das cidades
-                    cidade[i].nome,     //nos locais apropriados
-                    (float) Math.round(largura*cidade[i].x) + 10f,
-                    (float) Math.round(altura*cidade[i].y),
+                    cidade[i].getNome(),     //nos locais apropriados
+                    (float) Math.round(largura*cidade[i].getX()) + 10f,
+                    (float) Math.round(altura*cidade[i].getY()),
                     paint);
         }
+    }
+    private void desenharCaminhos(int largura, int altura, Paint paint, Canvas canvas, Caminho[][] caminhos, Cidade[] cidades)
+    {
+        for (int i = 0; i < caminhos.length; i++)
+            if (caminhos[i] != null)
+                for(int j = 0; j<caminhos.length; j++)
+                    if (caminhos[i][j] != null)
+                        canvas.drawLine(
+                                (float) Math.round(largura*cidades[i].getX()),
+                                (float) Math.round(altura*cidades[i].getY()),
+                                (float) Math.round(largura*cidades[j].getX()),
+                                (float) Math.round(altura*cidades[j].getY()),
+                                paint);
     }
 
 
