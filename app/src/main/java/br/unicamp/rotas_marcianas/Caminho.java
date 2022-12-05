@@ -4,19 +4,19 @@ import com.google.gson.annotations.SerializedName;
 
 public class Caminho {
     @SerializedName("cidadeDeOrigem")
-    String cidadeOrigem;
+    private String cidadeOrigem;
 
     @SerializedName("cidadeDeDestino")
-    String cidadeDestino;
+    private String cidadeDestino;
 
     @SerializedName("distanciaCaminho")
-    int distancia;
+    private int distancia;
 
     @SerializedName("tempoCaminho")
-    int tempo;
+    private int tempo;
 
     @SerializedName("custoCaminho")
-    int custo;
+    private int custo;
 
     public Caminho() {
         cidadeDestino = cidadeOrigem = "";
@@ -34,6 +34,7 @@ public class Caminho {
     public String getCidadeOrigem() {
         return this.cidadeOrigem;
     }
+
     public void setCidadeOrigem(String cidadeOrigem) {
         this.cidadeOrigem = cidadeOrigem;
     }
@@ -41,6 +42,14 @@ public class Caminho {
     public String getCidadeDestino() {
         return this.cidadeDestino;
     }
+
+//    public int indexCidadeOrigem(String nome)
+//    {
+//        Cidade cidade = new Cidade();
+//        for(int i = 0; i < )
+//    }
+
+
 
     public void setCidadeDestino(String cidadeDestino) {
         this.cidadeDestino = cidadeDestino;
