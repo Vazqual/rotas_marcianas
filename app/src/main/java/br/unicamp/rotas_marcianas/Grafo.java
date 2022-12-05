@@ -74,7 +74,7 @@ public class Grafo extends AppCompatActivity { ;
         return exibirPercursos(inicioDoPercurso, finalDoPercurso);
     }
 
-    public String exibirPercursos(int inicioDoPercurso, int finalDoPercurso) {
+    private String exibirPercursos(int inicioDoPercurso, int finalDoPercurso) {
         String resultado = "";
         for (int j = 0; j < numVerts; j++) {
             resultado += vertices[j].cidade + "=";
@@ -110,7 +110,7 @@ public class Grafo extends AppCompatActivity { ;
         return resultado;
     }
 
-    public void ajustarMenorCaminho() {
+    private void ajustarMenorCaminho() {
         for (int coluna = 0; coluna < numVerts; coluna++)
             if (!vertices[coluna].foiVisitado) // para cada vértice ainda não visitado
             {
@@ -134,7 +134,7 @@ public class Grafo extends AppCompatActivity { ;
         Log.i("Cidade", vertices[v].cidade.getNome());
     }
 
-    public int semSucessores() {
+    private int semSucessores() {
         boolean temAresta;
         for (int linha = 0; linha < numVerts; linha++) {
             temAresta = false;
@@ -150,7 +150,7 @@ public class Grafo extends AppCompatActivity { ;
         return -1;
     }
 
-    public int obterMenor() {
+    private int obterMenor() {
         int distanciaMinima = infinity;
         int indiceDaMinima = 0;
         for (int j = 0; j < numVerts; j++)

@@ -165,7 +165,15 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Recursao recursao = new Recursao(caminhos, cidades);
 
-                    Stack<Stack<Caminho>> ssCaminhos = recursao.procurarCaminhos(ddOrigem.getSelectedItemPosition(), ddDestino.getSelectedItemPosition());
+                    Stack<Stack<Movimento>> ssMovimentos = recursao.procurarCaminhos(ddOrigem.getSelectedItemPosition(), ddDestino.getSelectedItemPosition());
+
+//                    Stack tempStack;
+//                    for (int i = 0; !ssCaminhos.isEmpty(); i++)
+//                    {
+//                        tempStack = ssCaminhos.pop();
+//                        for (int i = 0; )
+//                    }
+                    tvCaminhos.setText(ssMovimentos.toString());
 
                 }
                 else Toast.makeText(MainActivity.this, "Nenhum método foi selecionado! Escolha Recursão ou Dijkstra.", Toast.LENGTH_SHORT).show();
@@ -231,7 +239,6 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
             return null;
         }
-
         return jsonString;
     }
 }
