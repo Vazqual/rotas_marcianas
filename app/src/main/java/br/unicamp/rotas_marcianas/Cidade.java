@@ -2,6 +2,11 @@ package br.unicamp.rotas_marcianas;
 
 import com.google.gson.annotations.SerializedName;
 
+// ---------- Rotas Marcianas ---------
+// Felipe Stolze Vazquez -------- 21233
+// Guilherme Felippe de Campos -- 21236
+// Júlia Lopes De Campos -------- 20140
+
 public class Cidade {
 
     @SerializedName("nomeCidade")

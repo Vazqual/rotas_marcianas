@@ -7,11 +7,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Stack;
 
-public class Grafo extends AppCompatActivity { ;
+// ---------- Rotas Marcianas ---------
+// Felipe Stolze Vazquez -------- 21233
+// Guilherme Felippe de Campos -- 21236
+// Júlia Lopes De Campos -------- 20140
+
+public class Grafo extends AppCompatActivity {
+    ;
     private Vertice[] vertices;
     private int[][] adjMatrix;
     int numVerts;
-     // para exibir a matriz de adjacência num formulário
 
     /// DIJKSTRA
     DistOriginal[] percurso;
@@ -25,11 +30,10 @@ public class Grafo extends AppCompatActivity { ;
         adjMatrix = new int[NUM_VERTICES][NUM_VERTICES];
         numVerts = 0;
         nTree = 0;
-        for (int j = 0; j < NUM_VERTICES; j++) // zera toda a matriz
-            for (int k = 0; k < NUM_VERTICES; k++)
-            {
-                if(caminhos[j][k] != null)
-                    adjMatrix[j][k] = caminhos[j][k].getDistancia(); // distância tão grande que não existe
+        for (int j = 0; j < NUM_VERTICES; j++)
+            for (int k = 0; k < NUM_VERTICES; k++) {
+                if (caminhos[j][k] != null)
+                    adjMatrix[j][k] = caminhos[j][k].getDistancia();    // usa a matriz formada na main para formar a matriz de inteiros
                 else
                     adjMatrix[j][k] = infinity;
             }
@@ -45,7 +49,6 @@ public class Grafo extends AppCompatActivity { ;
     public void novaAresta(int origem, int destino, int distancia) {
         adjMatrix[origem][destino] = distancia; // sobrecarga do método anterior
     }
-
 
     public String caminho(int inicioDoPercurso, int finalDoPercurso) {
         for (int j = 0; j < numVerts; j++)
@@ -96,15 +99,13 @@ public class Grafo extends AppCompatActivity { ;
 
 
         resultado = "";
-        while (pilha.size() != 0) {
-            resultado += " --> "+ pilha.pop().getNome() + "\n";
-//            if (pilha.size() != 0)
-//                resultado += " --> ";
-        }
+        while (pilha.size() != 0)
+            resultado += " --> " + pilha.pop().getNome() + "\n";
+
         if ((cont == 1) && (percurso[finalDoPercurso].distancia == infinity))
             resultado = "Não há caminho";
         else
-            resultado += " --> " + vertices[finalDoPercurso].cidade.getNome() ;
+            resultado += " --> " + vertices[finalDoPercurso].cidade.getNome();
 
         Log.i("Caminhos", resultado);
         return resultado;
@@ -134,22 +135,6 @@ public class Grafo extends AppCompatActivity { ;
         Log.i("Cidade", vertices[v].cidade.getNome());
     }
 
-    private int semSucessores() {
-        boolean temAresta;
-        for (int linha = 0; linha < numVerts; linha++) {
-            temAresta = false;
-            for (int col = 0; col < numVerts; col++)
-                if (adjMatrix[linha][col] > 0) {
-                    temAresta = true;
-                    break;
-                }
-
-            if (!temAresta)
-                return linha;
-        }
-        return -1;
-    }
-
     private int obterMenor() {
         int distanciaMinima = infinity;
         int indiceDaMinima = 0;
@@ -159,25 +144,5 @@ public class Grafo extends AppCompatActivity { ;
                 indiceDaMinima = j;
             }
         return indiceDaMinima;
-    }
-
-    private void moverLinhas(int row, int length) {
-        if (row != numVerts - 1)
-            for (int col = 0; col < length; col++)
-                adjMatrix[row][col] = adjMatrix[row + 1][col]; // desloca para excluir
-    }
-
-    private void moverColunas(int col, int length) {
-        if (col != numVerts - 1)
-            for (int row = 0; row < length; row++)
-                adjMatrix[row][col] = adjMatrix[row][col + 1]; // desloca para excluir
-    }
-
-
-    private int obterVerticeAdjacenteNaoVisitado(int v) {
-        for (int j = 0; j < numVerts; j++)
-            if ((adjMatrix[v][j] != 0) && (!vertices[j].foiVisitado))
-                return j;
-        return -1;
     }
 }
